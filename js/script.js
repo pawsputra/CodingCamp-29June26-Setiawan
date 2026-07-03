@@ -344,7 +344,7 @@ function timerTick() {
     renderTimerDisplay();
     clearTimerClasses();
     elTimerDisplay.classList.add('timer-done');
-    elTimerStatus.textContent = 'ðŸŽ‰ Session complete! Time for a break.';
+    elTimerStatus.textContent = 'Session complete! Time for a break.';
 
     // Native browser notification (no API â€” just alert as a simple notification)
     // Only show alert if tab is not focused, otherwise use the status message.
@@ -373,7 +373,7 @@ function handleTimerStart() {
   state.timerRunning = true;
   clearTimerClasses();
   elTimerDisplay.classList.add('timer-running');
-  elTimerStatus.textContent = 'â–¶ Session in progressâ€¦';
+  elTimerStatus.textContent = 'Session in progress';
 
   // Always clear any stale interval before creating a new one
   clearInterval(state.timerIntervalId);
@@ -388,7 +388,7 @@ function handleTimerStop() {
   state.timerRunning    = false;
 
   clearTimerClasses();
-  elTimerStatus.textContent = 'â¸ Session paused.';
+  elTimerStatus.textContent = 'Session paused.';
 }
 
 function handleTimerReset() {
@@ -430,7 +430,7 @@ function handleTimerSet() {
   clearTimerClasses();
   renderTimerDisplay();
   elTimerDurationInput.value = '';
-  elTimerStatus.textContent  = `âœ“ Duration set to ${val} minute${val !== 1 ? 's' : ''}.`;
+  elTimerStatus.textContent  = `Duration set to ${val} minute${val !== 1 ? 's' : ''}.`;
 
   // Update live summary
   updateStats();
